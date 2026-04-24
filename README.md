@@ -28,13 +28,12 @@ WEBHOOK_URL=https://your-webhook-endpoint.com/receive
 
 ### 3. Running the Server
 ```bash
-# Development mode (auto-reload)
-npm run dev
-
-# Production build
-npm run build
-npm start
+### 4. Running with Docker (Recommended)
+You can run the entire server in a containerized environment using Docker:
+```bash
+docker compose up --build
 ```
+*Note: Authentication QR code will appear in the container logs. Once scanned, the session is persisted in the `.wwebjs_auth` volume.*
 
 ## 🤖 MCP Tools
 

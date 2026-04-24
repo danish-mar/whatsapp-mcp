@@ -1,0 +1,14 @@
+services:
+  whatsapp-mcp:
+    build: .
+    container_name: whatsapp-mcp
+    ports:
+      - "3012:3012" # MCP Port
+      - "3013:3013" # REST API Port
+    volumes:
+      - ./.wwebjs_auth:/app/.wwebjs_auth # Persist WhatsApp session
+      - ./.env:/app/.env # Use local env file
+    restart: unless-stopped
+    # Interactive mode is needed to see the QR code in logs
+    stdin_open: true
+    tty: true
